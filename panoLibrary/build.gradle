@@ -52,20 +52,17 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'it.sephiroth.android.exif:library:+'
-    compile 'org.simpleframework:simple-xml:+'
-    compile 'com.nostra13.universalimageloader:universal-image-loader:+'
-    compile 'org.aurelienribon:tweenengine:+'
-    compile 'tv.danmaku.ijk.media:ijkplayer-java:+'
-    compile 'org.opencv:OpenCV-Android:3.1.0'
     compile files('libs/panocamera.jar')
     compile files('libs/lightcycle.jar')
     compile files('libs/panoplayer.jar')
+    compile files('libs/sunjce.jar')
+    compile 'com.squareup.okhttp:okhttp:2.7.5'
+    compile 'com.squareup.okio:okio:1.9.0'
 }
 
 
-def siteUrl = 'https://github.com/HuangLiGuo/TweenEngine'   // 项目的主页
-def gitUrl = 'https://github.com/HuangLiGuo/TweenEngine.git'   // Git仓库的url
+def siteUrl = 'https://github.com/xiaoqiu1235/panoLibrary'   // 项目的主页
+def gitUrl = 'https://github.com/xiaoqiu1235/panoLibrary.git'   // Git仓库的url
 group = "cn.hsgn.android"            // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
@@ -112,8 +109,6 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 artifacts {
-    archives javadocJar
-    archives sourcesJar
 }
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
